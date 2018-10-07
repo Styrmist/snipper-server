@@ -25,7 +25,7 @@ SECRET_KEY = '1(%0_qeuy&yagwcv1odtuq5z#+)kfs7iq+h(xm=)6r429zxuah'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'snipper.cf', ' styrmist.pythonanywhere.com']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'snipper',
+        'USER': 'dev',
+        'PASSWORD': 'nobody',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
